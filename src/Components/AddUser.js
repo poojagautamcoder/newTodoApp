@@ -141,7 +141,7 @@ const AddUser = () => {
         <div className="addItems">
           <input
             type="text"
-            placeholder="✍ Add Item"
+            placeholder="✍ Add new Item"
             className="form-control  inputstyle"
             value={inputdata}
             onChange={(event) => setInputData(event.target.value)}
