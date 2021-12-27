@@ -123,8 +123,6 @@ const AddUser = () => {
   // enter key
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      // console.log("hello");
-      // console.log(event.key);
       addItem();
     }
   };
@@ -196,8 +194,6 @@ const AddUser = () => {
                     id="id"
                     type="checkbox"
                     value="checked"
-                    // checked = {elm.status ? true:false}
-                    // this is not required every time we can do also elm.status
                     checked={curElem.status}
                     onChange={() => handleOnChange(curElem.id)}
                     className="check"
@@ -205,7 +201,6 @@ const AddUser = () => {
                 </div>
 
                 <div>
-                  {/* {JSON.stringify(curElem)} */}
                   {curElem.edit ? (
                     <input
                       type="text"
