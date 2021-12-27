@@ -5,16 +5,16 @@
   height: auto;
 }
 .btn-addtodo {
-    color: white;
-    background: #582d8d;
-    font-size: 20px;
-    font-weight: 600;
-    border: none;
-    padding: 17px;
-    margin-left: 5px;
-    cursor: pointer;
-    padding-right: 28px;
-    padding-left: 28px;
+  color: white;
+  background: #582d8d;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  padding: 17px;
+  margin-left: 5px;
+  cursor: pointer;
+  padding-right: 28px;
+  padding-left: 28px;
 }
 .Writetodo {
   padding: 15px;
@@ -27,19 +27,10 @@
 .heading {
   text-align: left;
 }
-/* .form-control[type = text]{
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  transition: all.3s;
-}
-.form-control[type = text]:invalid{
-  border-color: red;
-  background-color: rgb(224, 178, 178);
 
-} */
-.eachItem{
+.eachItem {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   margin-right: auto;
   margin-top: 1rem;
@@ -48,31 +39,30 @@
   width: 78%;
   color: black;
 }
-.dangerbtn{
-  color:white;
+.dangerbtn {
+  color: white;
   background-color: red;
   outline: none;
   box-shadow: none;
   border: none;
   font-size: 21px;
   padding: 4px;
-
 }
-.result{
+.result {
   display: flex;
   align-items: center;
 }
 
-.form-control{
+.form-control {
   padding: 20px;
   padding-left: 70px;
   padding-right: 70px;
 }
-.todo-btn{
+.todo-btn {
   justify-content: space-evenly;
 }
-.writebtn{
-  color:white;
+.writebtn {
+  color: white;
   background-color: rgb(48, 143, 48);
   outline: none;
   box-shadow: none;
@@ -80,26 +70,27 @@
   font-size: 21px;
   padding: 4px;
 }
-.filter{
+.filter {
   display: flex;
   justify-content: space-between;
   width: 80%;
   margin-top: 20px;
 }
-ul,li{
-text-decoration: none;
-list-style-type: none;
+ul,
+li {
+  text-decoration: none;
+  list-style-type: none;
 }
 .toggle-btn {
   border: none;
   outline: none;
   font-size: 20px;
   border-radius: 6px;
-  background-color:rgb(219 207 209);
+  background-color: rgb(219 207 209);
   color: black;
   font-weight: 300;
 }
-.tick-cross{
+.tick-cross {
   direction: flex;
 }
 .cross {
@@ -111,16 +102,6 @@ list-style-type: none;
   border: none;
 }
 
-.inputstyle{
+.inputstyle {
   border-color: red;
 }
-
-
-
-
-
-
-
-
-
-
