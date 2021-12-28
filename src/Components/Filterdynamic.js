@@ -1,38 +1,33 @@
 import React from "react";
+import AllButtons from "../common component/AllButtons";
 import styles from "../styles/Filter.css";
 
 const Filterdynamic = (props) => {
-  const { items, handleFilter, FilterItem } = props;
+  const { items, handleFilter } = props;
   return (
     <div className="dynamic-filter">
       <div className="filter">
-        <button
-          type="button"
+        <AllButtons
           className="btn toggle-btn"
-          aria-pressed={FilterItem}
-          onClick={(e) => handleFilter(e)}
-          value={"all"}
+          onClick={(e) => handleFilter("all")}
+          value="all"
         >
           All{items.status}
-        </button>
-        <button
-          type="button"
+        </AllButtons>
+        <AllButtons
           className="btn toggle-btn"
-          aria-pressed={FilterItem}
-          onClick={(e) => handleFilter(e)}
-          value={"completed"}
+          onClick={(e) => handleFilter("completed")}
+          value="completed"
         >
-          Completed{items.status}
-        </button>
-        <button
-          type="button"
+          Complete{items.status}
+        </AllButtons>
+        <AllButtons
           className="btn toggle-btn"
-          aria-pressed={FilterItem}
-          onClick={(e) => handleFilter(e)}
-          value={"incomplete"}
+          onClick={(e) => handleFilter("incomplete")}
+          value="incomplete"
         >
           Incomplete{items.status}
-        </button>
+        </AllButtons>
       </div>
     </div>
   );

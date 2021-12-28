@@ -58,7 +58,6 @@ const Home = () => {
   const addItem = () => {
     if (!inputdata) {
       alert("plz fill the data");
-      console.log(inputdata);
     } else {
       const myNewInputData = {
         id: new Date().getTime().toString(),
@@ -82,9 +81,7 @@ const Home = () => {
     setItems(updateTodo);
   };
   // filter
-  const handleFilter = (e) => {
-    let value = e.target.value;
-
+  const handleFilter = (value) => {
     if (value === "all") {
       setFilterItem(items);
     } else if (value === "completed") {
@@ -97,7 +94,6 @@ const Home = () => {
       setFilterItem(newTodo);
     }
   };
-
   useEffect(() => {
     setFilterItem([...items]);
   }, [items]);

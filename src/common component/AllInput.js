@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "../styles/AllInput.css";
 const AllInput = (props) => {
-  const { value, onChange, onKeyDown, onClick } = props;
+  const { value, onChange, onKeyDown, onClick, className } = props;
   return (
     <div>
       <input
@@ -12,6 +11,7 @@ const AllInput = (props) => {
         onChange={onChange}
         onKeyDown={onKeyDown}
         onClicK={onClick}
+        className={className}
       ></input>
     </div>
   );

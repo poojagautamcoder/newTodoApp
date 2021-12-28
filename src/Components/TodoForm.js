@@ -20,8 +20,11 @@ const TodoForm = (props) => {
           onChange={(event) => setInputData(event.target.value)}
           onKeyDown={handleKeyDown}
           onClick={changeStyle}
+          className="form-control inputstyle"
         />
-        <AllButtons addItem={addItem} />
+        <AllButtons onClick={addItem} className="btn-addtodo">
+          +
+        </AllButtons>
       </div>
     </div>
   );

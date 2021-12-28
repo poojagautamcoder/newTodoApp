@@ -4,3 +4,80 @@
 .addItems {
   display: flex;
 }
+.form-control {
+  padding: 20px 70px 20px 70px;
+}
+.inputstyle {
+  border-color: red;
+}
+.btn-addtodo {
+  color: white;
+  background: #582d8d;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+  padding: 16px 28px 16px 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <button
+type="button"
+className="btn toggle-btn"
+aria-pressed={FilterItem}
+onClick={(e) => handleFilter(e)}
+value={"completed"}
+>
+Completed{items.status}
+</button>
+<button
+type="button"
+className="btn toggle-btn"
+aria-pressed={FilterItem}
+onClick={(e) => handleFilter(e)}
+value={"incomplete"}
+>
+Incomplete{items.status}
+</button> */
