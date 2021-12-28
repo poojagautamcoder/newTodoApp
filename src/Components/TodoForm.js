@@ -16,12 +16,15 @@ const TodoForm = (props) => {
       <h2 className="heading">Todos List</h2>
       <div className="addItems">
         <AllInput
-          inputdata={inputdata}
-          setInputData={setInputData}
-          handleKeyDown={handleKeyDown}
-          changeStyle={changeStyle}
+          value={inputdata}
+          onChange={(event) => setInputData(event.target.value)}
+          onKeyDown={handleKeyDown}
+          onClick={changeStyle}
+          className="form-control inputstyle"
         />
-        <AllButtons addItem={addItem} />
+        <AllButtons onClick={addItem} className="btn-addtodo">
+          +
+        </AllButtons>
       </div>
     </div>
   );

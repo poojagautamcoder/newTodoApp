@@ -1,17 +1,17 @@
 import React from "react";
-import styles from "../styles/AllInput.css";
 const AllInput = (props) => {
-  const { inputdata, setInputData, handleKeyDown, changeStyle } = props;
+  const { value, onChange, onKeyDown, onClick, className } = props;
   return (
     <div>
       <input
         type="text"
         className="form-control  inputstyle"
         placeholder="✍ Add newItem"
-        value={inputdata}
-        onChange={(event) => setInputData(event.target.value)}
-        onKeyDown={handleKeyDown}
-        onClick={changeStyle}
+        value={value}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+        onClicK={onClick}
+        className={className}
       ></input>
     </div>
   );

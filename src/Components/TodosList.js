@@ -4,7 +4,6 @@ import { AiFillDelete } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
 import { TiTickOutline } from "react-icons/ti";
 import AllInput from "../common component/AllInput";
-import ListInput from "../common component/ListInput";
 const TodosList = (props) => {
   const {
     items,
@@ -16,7 +15,6 @@ const TodosList = (props) => {
     editItem,
     saveItem,
     deleteItem,
-    enterKeyPress,
   } = props;
 
   return (
@@ -36,11 +34,11 @@ const TodosList = (props) => {
             </div>
             <div>
               {curElem.edit ? (
-                <ListInput
-                  setIsEditItem={setIsEditItem}
-                  isEditItem={isEditItem}
+                <AllInput
+                  className="input-area"
+                  onChange={(event) => setIsEditItem(event.target.value)}
+                  value={isEditItem}
                   key={curElem.id}
-                  enterKeyPress={enterKeyPress}
                 />
               ) : (
                 <h3 className="heading">{curElem.name}</h3>
