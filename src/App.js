@@ -1,13 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import AddUser from './Components/AddUser';
+import logo from "./logo.svg";
+import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="Outerbox">
-    <AddUser/>
+    <div>
+      <Home />
     </div>
   );
 }
-
 export default App;
