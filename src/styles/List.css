@@ -1,60 +1,56 @@
-.eachItem{
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    margin-right: auto;
-    margin-top: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    width: 78%;
-    color: black;
-  }
-
-  .result{
-    display: flex;
-    align-items: center;
-  }
-  .todo-btn{
-    display: flex;
-    margin-right: 3px;
-   }
-
-  .writebtn{
-    color:white;
-    background-color: rgb(48, 143, 48);
-    outline: none;
-    box-shadow: none;
-    border: none;
-    font-size: 21px;
-    padding: 4px;
-  }
-  .cross {
-    padding: 2px;
-    padding-left: 11px;
-    padding-right: 11px;
-    background-color: grey;
-    outline: none;
-    border: none;
-    margin-right: 5px;
-  }
-  
-  .tick{
-    margin-right: 1px;
-  }
-
-  .output-form {
-    border-radius: 10px;
-    padding: 20px;
-    outline: none;
-    box-shadow: none;
-  }
-  .dangerbtn{
-    color:white;
-    background-color: red;
-    outline: none;
-    box-shadow: none;
-    border: none;
-    font-size: 21px;
-    padding: 4px;
-    margin-left: 5px;
-  }
+.eachItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: 78%;
+  color: black;
+}
+.result {
+  display: flex;
+  align-items: center;
+}
+.todo-btn {
+  display: flex;
+  margin-right: 3px;
+}
+.writebtn {
+  color: white;
+  background-color: rgb(48, 143, 48);
+  outline: none;
+  box-shadow: none;
+  border: none;
+  font-size: 21px;
+  padding: 4px;
+}
+.cross {
+  padding: 2px;
+  padding-left: 11px;
+  padding-right: 11px;
+  background-color: grey;
+  outline: none;
+  border: none;
+  margin-right: 5px;
+}
+.tick {
+  margin-right: 1px;
+}
+.output-form {
+  border-radius: 10px;
+  padding: 20px;
+  outline: none;
+  box-shadow: none;
+}
+.dangerbtn {
+  color: white;
+  background-color: red;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  font-size: 21px;
+  padding: 4px;
+  margin-left: 5px;
+}

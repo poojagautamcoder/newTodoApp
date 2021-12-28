@@ -2,31 +2,29 @@ import React, { useState, useEffect } from "react";
 import TodoForm from "../Components/TodoForm";
 import Filterdynamic from "../Components/Filterdynamic";
 import TodosList from "../Components/TodosList";
-import styles from "../styles/Home.css"
+import styles from "../styles/Home.css";
 
 // get the localStorage data back
 const getLocalData = () => {
-    const lists = localStorage.getItem("mytodolist");
-  
-    if (lists) {
-      return JSON.parse(lists);
-    } else {
-      return [];
-    }
-  };
+  const lists = localStorage.getItem("mytodolist");
+
+  if (lists) {
+    return JSON.parse(lists);
+  } else {
+    return [];
+  }
+};
 
 const Home = () => {
-    const [inputdata, setInputData] = useState("");
-    const [items, setItems] = useState(getLocalData());
-    const [isEditItem, setIsEditItem] = useState("");
-    const [FilterItem, setFilterItem] = useState([]);
-    const [style, setStyle] = useState("cont");
+  const [inputdata, setInputData] = useState("");
+  const [items, setItems] = useState(getLocalData());
+  const [isEditItem, setIsEditItem] = useState("");
+  const [FilterItem, setFilterItem] = useState([]);
+  const [style, setStyle] = useState("cont");
 
-
-     //checkbox status
+  //checkbox status
   const handleOnChange = (id) => {
     const newArray = items.map((curElem, index) => {
-      console.log(curElem);
       if (curElem.id == id) {
         return {
           ...curElem,
@@ -64,6 +62,7 @@ const Home = () => {
   const addItem = () => {
     if (!inputdata) {
       alert("plz fill the data");
+      console.log(inputdata);
     } else {
       const myNewInputData = {
         id: new Date().getTime().toString(),
@@ -77,7 +76,6 @@ const Home = () => {
   };
   // save sedited area
   const saveItem = (id) => {
-    console.log("jhdfjhfgdfhjg");
     const updateTodo = items.map((curElem) => {
       if (curElem.id == id) {
         return { ...curElem, name: isEditItem, edit: false };
@@ -91,17 +89,16 @@ const Home = () => {
   // filter
   const handleFilter = (e) => {
     let value = e.target.value;
-    console.log(value);
+
     if (value === "all") {
       setFilterItem(items);
-      console.log(items);
     } else if (value === "completed") {
       let newTodo = items.filter((todo) => todo.status === true);
-      console.log(newTodo);
+
       setFilterItem(newTodo);
     } else if (value === "incomplete") {
       let newTodo = items.filter((todo) => todo.status === false);
-      console.log(newTodo);
+
       setFilterItem(newTodo);
     }
   };
@@ -109,7 +106,6 @@ const Home = () => {
   useEffect(() => {
     setFilterItem([...items]);
   }, [items]);
-
 
   // adding localStorage
   useEffect(() => {
@@ -123,26 +119,49 @@ const Home = () => {
     }
   };
 
-  // Input Box Style
-  const changeStyle = () => {
-    console.log("you just clicked");
-
-    setStyle("inputstyle");
+  const enterKeyPress = (event) => {
+    if (event.key === "Enter") {
+      //  console.log(saveItem);
+      saveItem();
+    }
   };
 
-
+  // Input Box Style
+  const changeStyle = () => {
+    setStyle("inputstyle");
+  };
 
   return (
     <div>
       <div className="Outerbox">
-      <div className="textend">
-        <TodoForm items={items} handleFilter={handleFilter} setInputData={setInputData} inputdata={inputdata} changeStyle={changeStyle} addItem = {addItem} handleKeyDown = {handleKeyDown}/>
-        <Filterdynamic items = {items} handleFilter = {handleFilter} FilterItem = {FilterItem}/>
-        <TodosList FilterItem = {FilterItem} handleOnChange = {handleOnChange} isEditItem = {isEditItem} setIsEditItem = {setIsEditItem} editItem = {editItem} saveItem = {saveItem} deleteItem = {deleteItem}/>
+        <div className="textend">
+          <TodoForm
+            items={items}
+            handleFilter={handleFilter}
+            setInputData={setInputData}
+            inputdata={inputdata}
+            changeStyle={changeStyle}
+            addItem={addItem}
+            handleKeyDown={handleKeyDown}
+          />
+          <Filterdynamic
+            items={items}
+            handleFilter={handleFilter}
+            FilterItem={FilterItem}
+          />
+          <TodosList
+            FilterItem={FilterItem}
+            handleOnChange={handleOnChange}
+            isEditItem={isEditItem}
+            setIsEditItem={setIsEditItem}
+            editItem={editItem}
+            saveItem={saveItem}
+            deleteItem={deleteItem}
+            enterKeyPress={enterKeyPress}
+          />
+        </div>
       </div>
-      {/* <AddUser/> */}
-    </div>
     </div>
   );
 };
-export default Home ;
+export default Home;
