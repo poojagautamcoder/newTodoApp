@@ -14,14 +14,12 @@ const getLocalData = () => {
     return [];
   }
 };
-
 const Home = () => {
   const [inputdata, setInputData] = useState("");
   const [items, setItems] = useState(getLocalData());
   const [isEditItem, setIsEditItem] = useState("");
   const [FilterItem, setFilterItem] = useState([]);
   const [style, setStyle] = useState("cont");
-
   //checkbox status
   const handleOnChange = (id) => {
     const newArray = items.map((curElem, index) => {
@@ -36,7 +34,6 @@ const Home = () => {
     });
     setItems(newArray);
   };
-
   const editItem = (id, type) => {
     const updateEdit = items.map((curElem) => {
       if (curElem.id == id) {
@@ -57,7 +54,6 @@ const Home = () => {
     });
     setItems(updatedItems);
   };
-
   // add the items fucnction
   const addItem = () => {
     if (!inputdata) {
@@ -85,7 +81,6 @@ const Home = () => {
     });
     setItems(updateTodo);
   };
-
   // filter
   const handleFilter = (e) => {
     let value = e.target.value;
@@ -106,31 +101,20 @@ const Home = () => {
   useEffect(() => {
     setFilterItem([...items]);
   }, [items]);
-
   // adding localStorage
   useEffect(() => {
     localStorage.setItem("mytodolist", JSON.stringify(items));
   }, [items]);
-
   // enter key
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       addItem();
     }
   };
-
-  const enterKeyPress = (event) => {
-    if (event.key === "Enter") {
-      //  console.log(saveItem);
-      saveItem();
-    }
-  };
-
   // Input Box Style
   const changeStyle = () => {
     setStyle("inputstyle");
   };
-
   return (
     <div>
       <div className="Outerbox">
@@ -157,7 +141,6 @@ const Home = () => {
             editItem={editItem}
             saveItem={saveItem}
             deleteItem={deleteItem}
-            enterKeyPress={enterKeyPress}
           />
         </div>
       </div>
