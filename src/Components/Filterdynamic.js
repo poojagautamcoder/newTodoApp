@@ -1,5 +1,5 @@
 import React from "react";
-import AllButtons from "../common component/AllButtons";
+import AllButtons from "../genericcomponent/AllButtons";
 import styles from "../styles/Filter.css";
 
 const Filterdynamic = (props) => {
@@ -9,21 +9,21 @@ const Filterdynamic = (props) => {
       <div className="filter">
         <AllButtons
           className="btn toggle-btn"
-          onClick={(e) => handleFilter("all")}
+          onClick={() => handleFilter("all")}
           value="all"
         >
           All{items.status}
         </AllButtons>
         <AllButtons
           className="btn toggle-btn"
-          onClick={(e) => handleFilter("completed")}
+          onClick={() => handleFilter("completed")}
           value="completed"
         >
           Complete{items.status}
         </AllButtons>
         <AllButtons
           className="btn toggle-btn"
-          onClick={(e) => handleFilter("incomplete")}
+          onClick={() => handleFilter("incomplete")}
           value="incomplete"
         >
           Incomplete{items.status}

@@ -4,19 +4,11 @@ import Filterdynamic from "../Components/Filterdynamic";
 import TodosList from "../Components/TodosList";
 import styles from "../styles/Home.css";
 
-// get the localStorage data back
-const getLocalData = () => {
-  const lists = localStorage.getItem("mytodolist");
-
-  if (lists) {
-    return JSON.parse(lists);
-  } else {
-    return [];
-  }
-};
 const Home = () => {
   const [inputdata, setInputData] = useState("");
-  const [items, setItems] = useState(getLocalData());
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("mytodolist"))
+  );
   const [isEditItem, setIsEditItem] = useState("");
   const [FilterItem, setFilterItem] = useState([]);
   const [style, setStyle] = useState("cont");
@@ -94,13 +86,16 @@ const Home = () => {
       setFilterItem(newTodo);
     }
   };
+
   useEffect(() => {
     setFilterItem([...items]);
   }, [items]);
+
   // adding localStorage
   useEffect(() => {
     localStorage.setItem("mytodolist", JSON.stringify(items));
   }, [items]);
+
   // enter key
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -128,7 +123,7 @@ const Home = () => {
             items={items}
             handleFilter={handleFilter}
             FilterItem={FilterItem}
-          />
+          ></Filterdynamic>
           <TodosList
             FilterItem={FilterItem}
             handleOnChange={handleOnChange}

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Form.css";
-import AllButtons from "../common component/AllButtons";
-import AllInput from "../common component/AllInput";
+import AllButtons from "../genericcomponent/AllButtons";
+import AllInput from "../genericcomponent/AllInput";
 const TodoForm = (props) => {
   const {
     items,
@@ -11,13 +11,16 @@ const TodoForm = (props) => {
     addItem,
     handleKeyDown,
   } = props;
+  const onchangeValue = (event) => {
+    setInputData(event.target.value);
+  };
   return (
     <div>
       <h2 className="heading">Todos List</h2>
       <div className="addItems">
         <AllInput
           value={inputdata}
-          onChange={(event) => setInputData(event.target.value)}
+          onChange={onchangeValue}
           onKeyDown={handleKeyDown}
           onClick={changeStyle}
           className="form-control inputstyle"
