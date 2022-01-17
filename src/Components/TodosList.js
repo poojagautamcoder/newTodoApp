@@ -3,7 +3,7 @@ import styles from "../styles/List.css";
 import { AiFillDelete } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
 import { TiTickOutline } from "react-icons/ti";
-import AllInput from "../common component/AllInput";
+import AllInput from "../genericcomponent/AllInput";
 const TodosList = (props) => {
   const {
     items,
